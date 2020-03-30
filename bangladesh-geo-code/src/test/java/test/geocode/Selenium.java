@@ -7,6 +7,7 @@ package test.geocode;
 
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.nio.file.FileSystems;
@@ -55,7 +56,7 @@ public class Selenium {
         System.out.println("Selenium Working!");
     }
 
-    @Test
+    //    @Test
     public void verifySearchButton() {
         Path path = FileSystems.getDefault().getPath("src/main/resources/geckodriver/geckodriver.exe");
         System.out.println(path.toString());
@@ -78,5 +79,42 @@ public class Selenium {
 
         String text = search_button.getAttribute("value");
         Assert.assertEquals(text, search_text, "বাংলা");
+    }
+
+    @Test
+    public void testChoromo() {
+// declaration and instantiation of objects/variables
+//        Path path = FileSystems.getDefault().getPath("src/main/resources/geckodriver/geckodriver.exe");
+//        System.out.println(path.toString());
+//        System.setProperty("webdriver.gecko.driver", path.toString());
+//        WebDriver driver = new FirefoxDriver();
+        //comment the above 2 lines and uncomment below 2 lines to use Chrome
+        Path path = FileSystems.getDefault().getPath("src/main/resources/chromedriver/chromedriver.exe");
+        System.out.println(path.toString());
+        System.setProperty("webdriver.chrome.driver", path.toString());
+        WebDriver driver = new ChromeDriver();
+
+        String baseUrl = "http://demo.guru99.com/test/newtours/";
+        String expectedTitle = "Welcome: Mercury Tours";
+        String actualTitle = "";
+
+        // launch Fire fox and direct it to the Base URL
+        driver.get(baseUrl);
+
+        // get the actual value of the title
+        actualTitle = driver.getTitle();
+
+        /*
+         * compare the actual title of the page with the expected one and print
+         * the result as "Passed" or "Failed"
+         */
+        if (actualTitle.contentEquals(expectedTitle)) {
+            System.out.println("Test Passed!");
+        } else {
+            System.out.println("Test Failed");
+        }
+
+        //close Fire fox
+        driver.close();
     }
 }

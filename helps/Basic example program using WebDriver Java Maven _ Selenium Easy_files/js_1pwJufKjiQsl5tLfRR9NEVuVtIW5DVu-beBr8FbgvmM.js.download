@@ -1,0 +1,51 @@
+var $ = jQuery;
+
+$(window).scroll(sticky_rightad);
+//$(window).scroll(sticky_leftad);
+
+function sticky_rightad(){
+    var navbar = $('#navbar').get(0).getBoundingClientRect();
+    var footer = $('#footer_bar').get(0).getBoundingClientRect();
+    var windowH = $(window).height();
+    var addBlock = $('#stick').get(0).getBoundingClientRect();
+    var fbBlock = $('#block-fb-likebox-0').get(0).getBoundingClientRect();
+
+    if(footer.top >= windowH && fbBlock.bottom <= 0){
+    	$('#stick').addClass('stuck');	 
+    } else {
+    	$('#stick').removeClass('stuck');
+    }
+    
+}
+;
+/*
+Below code will be used
+to make youtube video better
+*/
+document.addEventListener("DOMContentLoaded",
+ function() {
+  var div, n,
+   v = document.getElementsByClassName("youtube-player");
+  for (n = 0; n < v.length; n++) {
+   div = document.createElement("div");
+   div.setAttribute("data-id", v[n].dataset.id);
+   div.innerHTML = easyVideoThumb(v[n].dataset.id);
+   div.onclick = easyVideoIframe;
+   v[n].appendChild(div);
+  }
+ });
+
+function easyVideoThumb(id) {
+ var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+  play = '<div class="play"></div>';
+ return thumb.replace("ID", id) + play;
+}
+
+function easyVideoIframe() {
+ var iframe = document.createElement("iframe");
+ var embed = "https://www.youtube.com/embed/ID?autoplay=1&rel=0";
+ iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+ iframe.setAttribute("frameborder", "0");
+ iframe.setAttribute("allowfullscreen", "1");
+ this.parentNode.replaceChild(iframe, this);
+};

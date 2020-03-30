@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<!-- saved from url=(0147)https://mkyong.com/java/jsoup-basic-web-crawler-example/?utm_source=mkyong.com&utm_medium=referral&utm_campaign=afterpost-related&utm_content=link0 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style"></style>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="google-site-verification" content="VsVvSTVAouAluNodWeR30BeIWTr4c84HvN4Fn9WBsak">
+        <link href="./jsoup – Basic web crawler example – Mkyong.com_files/bootstrap.min.css" rel="stylesheet">
+
+		<!-- wp_head -->
+		<link media="all" href="./jsoup – Basic web crawler example – Mkyong.com_files/autoptimize_40a657616597ef71ed1ce3e9f9e35354.css" rel="stylesheet"><title>jsoup – Basic web crawler example – Mkyong.com</title>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+
+
+
+
+
+<link rel="stylesheet" id="bs4-font-awesome-cdn-css" href="./jsoup – Basic web crawler example – Mkyong.com_files/all.min.css" type="text/css" media="all">
+<link rel="canonical" href="https://mkyong.com/java/jsoup-basic-web-crawler-example/">
+            
+            		<!-- ./wp_head -->
+
+	        <script async="" src="./jsoup – Basic web crawler example – Mkyong.com_files/analytics.js.download"></script><script async="" type="text/javascript" src="./jsoup – Basic web crawler example – Mkyong.com_files/saved_resource" defer=""></script>
+		<script type="text/javascript"> var vitag = vitag || {};</script>
+			
+	<script src="./jsoup – Basic web crawler example – Mkyong.com_files/clipboard.min.js.download"></script><script src="./jsoup – Basic web crawler example – Mkyong.com_files/saved_resource(1)"></script><script>window._BidFilter={site_id:1046,pbjsKey:'vlipb',checkAudio:false};</script><script src="./jsoup – Basic web crawler example – Mkyong.com_files/bidfilter.js.download"></script><script src="./jsoup – Basic web crawler example – Mkyong.com_files/prebid-v3.12.2.js.download"></script><script src="./jsoup – Basic web crawler example – Mkyong.com_files/gpt.js.download"></script><script src="./jsoup – Basic web crawler example – Mkyong.com_files/viPlayer_v29.js.download"></script><script src="./jsoup – Basic web crawler example – Mkyong.com_files/ima3.js.download"></script><script src="./jsoup – Basic web crawler example – Mkyong.com_files/apstag.js.download"></script><link rel="preload" href="./jsoup – Basic web crawler example – Mkyong.com_files/f.txt" as="script"><script type="text/javascript" src="./jsoup – Basic web crawler example – Mkyong.com_files/f.txt"></script><script src="./jsoup – Basic web crawler example – Mkyong.com_files/pubads_impl_2020032302.js.download" async=""></script></head>
+
+	<body class="wpdiscuz_5.3.5">
+		
+        <!-- navbar-expand-xl display mobile menu  if width < 1200px -->
+		<nav class="navbar navbar-expand-xl navbar-dark fixed-top bg-blue">
+
+			<a class="navbar-brand mr-0 mr-md-2" href="https://mkyong.com/" aria-label="Mkyong.com">
+        <!-- move to s3 -->
+				<noscript><img src="https://mkyong.com/wp-content/themes/mkyong-bs4-2020/images/logo.png" width="180px" height="32px" alt="Mkyong.com Logo"/></noscript><img class=" lazyloaded" src="./jsoup – Basic web crawler example – Mkyong.com_files/logo.webp" data-src="https://mkyong.com/wp-content/themes/mkyong-bs4-2020/images/logo.png" width="180px" height="32px" alt="Mkyong.com Logo">
+			</a>
+
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+              <span class="navbar-toggler-icon"></span>
+      </button>
+
+			<div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+					    <a class="nav-link" title="All Tutorials" href="https://mkyong.com/all-tutorials-on-mkyong-com/">All Tutorials</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" title="Java 8" href="https://mkyong.com/tutorials/java-8-tutorials/">Java 8</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" title="Java 13" href="https://mkyong.com/java/what-is-new-in-java-13/">Java 13</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" title="Spring Boot" href="https://mkyong.com/tutorials/spring-boot-tutorials/">Spring Boot</a>
+					</li>
+          <li class="nav-item">
+						<a class="nav-link" title="Contact" href="https://mkyong.com/contact-mkyong/">Contact</a>
+					</li>
+				</ul>
+
+				<form class="form-inline my-2 my-lg-0" role="search" method="get" action="https://www.mkyong.com/search/">
+					<input type="hidden" name="cx" value="partner-pub-2836379775501347:3714346998">
+					<input type="hidden" name="cof" value="FORID:10">
+					<input type="hidden" name="ie" value="UTF-8">
+					<input id="searchBox" name="q" class="form-control mr-sm-2" type="search" placeholder="Search for..." maxlength="50" aria-label="Search">
+					<button id="searchButton" class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+				</form>
+
+			</div>
+
+		</nav>
+
+<div class="container">
+	<div class="row">
+		<div class="col">		
+			<div class="box-ads-top d-1200 center">
+		
+	<div class="ads-container">
+	   <div class="adsbyvli" data-ad-slot="vi_9782605"></div>
+	   <script type="text/javascript">(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9782605")})</script>
+	</div>
+	
+	</div>
+		</div>
+	</div>
+</div>
+
+<div class="container box-top-margin">
+	<div class="row">
+		<div class="col" id="main">
+		 
+<article id="post-14330">
+
+	<h1>jsoup – Basic web crawler example</h1>
+
+	<!-- post meta -->
+	<div class="post-meta clearfix">		<div class="float-left"><noscript><img alt='author image' src='https://secure.gravatar.com/avatar/9f8418a196c6ce3840f66bb957382ebc?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9f8418a196c6ce3840f66bb957382ebc?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo d-flex mr-2 rounded-circle' height='48' width='48' /></noscript><img alt="author image" src="./jsoup – Basic web crawler example – Mkyong.com_files/9f8418a196c6ce3840f66bb957382ebc.png" data-src="https://secure.gravatar.com/avatar/9f8418a196c6ce3840f66bb957382ebc?s=48&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/9f8418a196c6ce3840f66bb957382ebc?s=96&amp;d=mm&amp;r=g 2x" class="avatar avatar-48 photo d-flex mr-2 rounded-circle lazyloaded" height="48" width="48" srcset="https://secure.gravatar.com/avatar/9f8418a196c6ce3840f66bb957382ebc?s=96&amp;d=mm&amp;r=g 2x">		</div><div>By <a href="https://mkyong.com/author/marilena/" title="Marilena" class="author" rel="author">Marilena</a> | <time datetime="2017-01-17T15:47:29+08:00">January 17, 2017</time></div><div>Viewed: 79,441 | <span>+463 pv/w</span></div></div>
+	<div id="post-content">
+		
+				
+		<div class="pic">
+<noscript><img src="http://www.mkyong.com/wp-content/uploads/2017/01/web-crawler-spider-logo.gif" alt="web-crawler-spider-logo" /></noscript><img class=" lazyloaded" src="./jsoup – Basic web crawler example – Mkyong.com_files/web-crawler-spider-logo.webp" data-src="http://www.mkyong.com/wp-content/uploads/2017/01/web-crawler-spider-logo.gif" alt="web-crawler-spider-logo">
+</div>
+<p>A <a href="https://en.wikipedia.org/wiki/Web_crawler" target="_blank">Web Crawler</a> is a program that navigates the Web and finds new or updated pages for indexing. The Crawler starts with seed websites or a wide range of popular URLs (also known as the <a href="https://frontera.readthedocs.io/en/v0.2.0/topics/what-is-a-crawl-frontier.html" target="_blank">frontier</a>) and searches in depth and width for hyperlinks to extract. </p>
+<p>A Web Crawler must be kind and robust. Kindness for a Crawler means that it respects the rules set by the robots.txt and avoids visiting a website too often. Robustness refers to the ability to avoid spider traps and other malicious behavior. Other good attributes for a Web Crawler is distributivity amongst multiple distributed machines, expandability, continuity and ability to prioritize based on page quality.</p>
+<h2>1. Steps to create web crawler</h2>
+<p>The basic steps to write a Web Crawler are:</p>
+<ol>
+<li>Pick a URL from the frontier</li>
+<li>Fetch the HTML code</li>
+<li>Parse the HTML to extract links to other URLs</li>
+<li>Check if you have already crawled the URLs and/or if you have seen the same content before</li>
+<ul>
+<li>If not add it to the index</li>
+</ul>
+<li>For each extracted URL </li>
+<ul>
+<li>Confirm that it agrees to be checked (robots.txt, crawling frequency)</li>
+</ul>
+</ol>
+<p>Truth be told, developing and maintaining one Web Crawler across all pages on the internet is… Difficult if not impossible, considering that there are over <a href="http://www.internetlivestats.com/total-number-of-websites/" target="_blank">1 billion websites</a> online right now. If you are reading this article, chances are you are not looking for a guide to create a Web Crawler but a Web Scraper. Why is the article called ‘Basic Web Crawler’ then? Well… Because it’s catchy… Really! Few people know the difference between crawlers and scrapers so we all tend to use the word “crawling” for everything, even for offline data scraping. Also, because to build a Web Scraper you need a crawl agent too. And finally, because this article intends to inform as well as provide a viable example.</p>
+<div class="d-1200">
+<div class="adsbyvli" data-ad-slot="vi_97811215"></div>
+<script type="text/javascript">(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_97811215")})</script>
+</div>
+
+<div class="ads-container-new ads-text-before-center">
+        <div id="snhb-Mkyong_NVU-0"></div>
+</div><h2>2. The skeleton of a crawler</h2>
+<p>For HTML parsing we will use <a href="https://jsoup.org/" target="_blank">jsoup</a>. The examples below were developed using jsoup version 1.10.2.</p>
+<div class="filename">pom.xml</div>
+<pre class="language-markup code-toolbar"><code class=" language-markup">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.jsoup<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jsoup<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.10.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>So let’s start with the basic code for a Web Crawler.</p>
+<div class="filename">BasicWebCrawler.java</div>
+<pre class="language-java code-toolbar"><code class=" language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>mkyong<span class="token punctuation">.</span>basicwebcrawler<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>Jsoup<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>nodes<span class="token punctuation">.</span>Document<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>nodes<span class="token punctuation">.</span>Element<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>select<span class="token punctuation">.</span>Elements<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashSet<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BasicWebCrawler</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> HashSet<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> links<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">BasicWebCrawler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        links <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span>String<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getPageLinks</span><span class="token punctuation">(</span>String URL<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//4. Check if you have already crawled the URLs </span>
+        <span class="token comment">//(we are intentionally not checking for duplicate content in this example)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>links<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token comment">//4. (i) If not add it to the index</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>links<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token comment">//2. Fetch the HTML code</span>
+                Document document <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//3. Parse the HTML to extract links to other URLs</span>
+                Elements linksOnPage <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"a[href]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token comment">//5. For each extracted URL... go back to Step 4.</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>Element page <span class="token operator">:</span> linksOnPage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">getPageLinks</span><span class="token punctuation">(</span>page<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"abs:href"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"For '"</span> <span class="token operator">+</span> URL <span class="token operator">+</span> <span class="token string">"': "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1. Pick a URL from the frontier</span>
+        <span class="token keyword">new</span> <span class="token class-name">BasicWebCrawler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPageLinks</span><span class="token punctuation">(</span><span class="token string">"http://www.mkyong.com/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<div class="note">
+<strong>Note</strong><br>
+Don’t let this code run for too long. It can take hours without ending.
+</div>
+<p>Sample Output:</p>
+<pre class="language-bash code-toolbar"><code class=" language-bash">http://www.mkyong.com/
+Android Tutorial
+Android Tutorial
+Java I/O Tutorial
+Java I/O Tutorial
+Java XML Tutorial
+Java XML Tutorial
+Java JSON Tutorial
+Java JSON Tutorial
+Java Regular Expression Tutorial
+Java Regular Expression Tutorial
+JDBC Tutorial
+<span class="token punctuation">..</span>.<span class="token punctuation">(</span>+ many <span class="token function">more</span> links<span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Like we mentioned before, a Web Crawler searches in width and depth for links. If we imagine the links on a web site in a tree-like structure, the root node or level zero would be the link we start with, the next level would be all the links that we found on level zero and so on.</p>
+<h2>3. Taking crawling depth into account</h2>
+<p>We will modify the previous example to set depth of link extraction. Notice that the only true difference between this example and the previous is that the recursive <code>getPageLinks()</code> method has an integer argument that represents the depth of the link which is also added as a condition in the <code>if...else</code> statement.</p>
+<div class="filename">WebCrawlerWithDepth.java</div>
+<pre class="language-java code-toolbar"><code class=" language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>mkyong<span class="token punctuation">.</span>depthwebcrawler<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>Jsoup<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>nodes<span class="token punctuation">.</span>Document<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>nodes<span class="token punctuation">.</span>Element<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>select<span class="token punctuation">.</span>Elements<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashSet<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WebCrawlerWithDepth</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> MAX_DEPTH <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> HashSet<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> links<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">WebCrawlerWithDepth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        links <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getPageLinks</span><span class="token punctuation">(</span>String URL<span class="token punctuation">,</span> <span class="token keyword">int</span> depth<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">!</span>links<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>depth <span class="token operator">&lt;</span> MAX_DEPTH<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"&gt;&gt; Depth: "</span> <span class="token operator">+</span> depth <span class="token operator">+</span> <span class="token string">" ["</span> <span class="token operator">+</span> URL <span class="token operator">+</span> <span class="token string">"]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                links<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                Document document <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                Elements linksOnPage <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"a[href]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                depth<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>Element page <span class="token operator">:</span> linksOnPage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">getPageLinks</span><span class="token punctuation">(</span>page<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"abs:href"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> depth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"For '"</span> <span class="token operator">+</span> URL <span class="token operator">+</span> <span class="token string">"': "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">WebCrawlerWithDepth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPageLinks</span><span class="token punctuation">(</span><span class="token string">"http://www.mkyong.com/"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<div class="note">
+<strong>Note</strong><br>
+Feel free to run the above code. It only took a few minutes on my laptop with depth set to 2. Please keep in mind, the higher the depth the longer it will take to finish.
+</div>
+<p>Sample Output:</p>
+<pre class="language-bash code-toolbar"><code class=" language-bash"><span class="token punctuation">..</span>.
+<span class="token operator">&gt;&gt;</span> Depth: 1 <span class="token punctuation">[</span>https://docs.gradle.org/current/userguide/userguide.html<span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span> Depth: 1 <span class="token punctuation">[</span>http://hibernate.org/orm/<span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span> Depth: 1 <span class="token punctuation">[</span>https://jax-ws.java.net/<span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span> Depth: 1 <span class="token punctuation">[</span>http://tomcat.apache.org/tomcat-8.0-doc/index.html<span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span> Depth: 1 <span class="token punctuation">[</span>http://www.javacodegeeks.com/<span class="token punctuation">]</span>
+For <span class="token string">'http://www.javacodegeeks.com/'</span><span class="token keyword">:</span> HTTP error fetching URL
+<span class="token operator">&gt;&gt;</span> Depth: 1 <span class="token punctuation">[</span>http://beust.com/weblog/<span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span> Depth: 1 <span class="token punctuation">[</span>https://dzone.com<span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span> Depth: 1 <span class="token punctuation">[</span>https://wordpress.org/<span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span> Depth: 1 <span class="token punctuation">[</span>http://www.liquidweb.com/?RID<span class="token operator">=</span>mkyong<span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span> Depth: 1 <span class="token punctuation">[</span>http://www.mkyong.com/privacy-policy/<span class="token punctuation">]</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<h2>4. Data Scraping vs. Data Crawling</h2>
+<p>So far so good for a theoretical approach on the matter. The fact is that you will hardly ever build a generic crawler, and if you want a “real” one, you should use tools that already exist. Most of what the average developer does is an extraction of specific information from specific websites and even though that includes building a Web Crawler, it’s actually called Web Scraping.</p>
+<p>There is a very good article by Arpan Jha for PromptCloud on <a href="https://www.promptcloud.com/data-scraping-vs-data-crawling/" target="_blank">Data Scraping vs. Data Crawling</a> which personally helped me a lot to understand this distinction and I would suggest reading it. </p>
+<p>To summarize it with a table taken from this article:</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<tbody><tr>
+<th>Data Scraping</th>
+<th>Data Crawling</th>
+</tr>
+<tr>
+<td>Involves extracting data from various sources including the web</td>
+<td>Refers to downloading pages from the web</td>
+</tr>
+<tr>
+<td>Can be done at any scale</td>
+<td>Mostly done at a large scale</td>
+</tr>
+<tr>
+<td>Deduplication is not necessarily a part</td>
+<td>Deduplication is an essential part</td>
+</tr>
+<tr>
+<td>Needs crawl agent and parser</td>
+<td>Needs only crawl agent</td>
+</tr>
+</tbody></table>
+</div>
+<p>Time to move out of theory and into a viable example, as promised in the intro. Let’s imagine a scenario in which we want to get all the URLs for articles that relate to Java 8 from mkyong.com. Our goal is to retrieve that information in the shortest time possible and thus avoid crawling through the whole website. Besides, this approach will not only waste the server’s resources, but our time as well.</p>
+<h2>5. Case Study – Extract all articles for ‘Java 8’ on mkyong.com</h2>
+<p>5.1 First thing we should do is look at the code of the website. Taking a quick look at mkyong.com we can easily notice the paging at the front page and that it follows a <code>/page/xx</code> pattern for each page.</p>
+<div class="pic">
+<noscript><img src="http://www.mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-1.png" alt="jsoup-web-crawler-example-1" /></noscript><img class=" lazyloaded" src="./jsoup – Basic web crawler example – Mkyong.com_files/jsoup-web-crawler-example-1.webp" data-src="http://www.mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-1.png" alt="jsoup-web-crawler-example-1">
+</div>
+<p>That brings us to the realization that the information we are looking for is easily accessed by retrieving all the links that include <code>/page/</code>. So instead of running through the whole website, we will limit our search using <code>document.select("a[href^=\"http://www.mkyong.com/page/\"]")</code>.  With this <code>css selector</code> we collect only the links that start with <code>http://mkyong.com/page/</code>.</p>
+<p>5.2 Next thing we notice is that the titles of the articles -which is what we want- are wrapped in <code>&lt;h2&gt;&lt;/h2&gt;</code> and <code>&lt;a href=""&gt;&lt;/a&gt;</code> tags. </p>
+<div class="pic">
+<noscript><img src="http://www.mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-2.png" alt="jsoup-web-crawler-example-2" /></noscript><img class=" lazyloaded" src="./jsoup – Basic web crawler example – Mkyong.com_files/jsoup-web-crawler-example-2.webp" data-src="http://www.mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-2.png" alt="jsoup-web-crawler-example-2">
+</div>
+<p>So to extract the article titles we will access that specific information using a <code>css selector</code> that restricts our <code>select</code> method to that exact information: <code>document.select("h2 a[href^=\"http://www.mkyong.com/\"]");</code></p>
+<p>5.3 Finally, we will only keep the links in which the title contains ‘Java 8’ and save them to a <code>file</code>.</p>
+<div class="filename">Extractor.java</div>
+<pre class="language-java code-toolbar"><code class=" language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>mkyong<span class="token punctuation">.</span>extractor<span class="token punctuation">;</span>
+
+<span class="token keyword">package</span> com<span class="token punctuation">.</span>mkyong<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>Jsoup<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>nodes<span class="token punctuation">.</span>Document<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>nodes<span class="token punctuation">.</span>Element<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jsoup<span class="token punctuation">.</span>select<span class="token punctuation">.</span>Elements<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>FileWriter<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashSet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Extractor</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> HashSet<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> links<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> List<span class="token operator">&lt;</span>List<span class="token operator">&lt;</span>String<span class="token operator">&gt;&gt;</span> articles<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">Extractor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        links <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        articles <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//Find all URLs that start with "http://www.mkyong.com/page/" and add them to the HashSet</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getPageLinks</span><span class="token punctuation">(</span>String URL<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>links<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                Document document <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                Elements otherLinks <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"a[href^=\"http://www.mkyong.com/page/\"]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>Element page <span class="token operator">:</span> otherLinks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>links<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token comment">//Remove the comment from the line below if you want to see it running on your editor</span>
+                        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>URL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                    <span class="token function">getPageLinks</span><span class="token punctuation">(</span>page<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"abs:href"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//Connect to each link saved in the article and find all the articles in the page</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getArticles</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        links<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>x <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+            Document document<span class="token punctuation">;</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                document <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                Elements articleLinks <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"h2 a[href^=\"http://www.mkyong.com/\"]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>Element article <span class="token operator">:</span> articleLinks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token comment">//Only retrieve the titles of the articles that contain Java 8</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>article<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">matches</span><span class="token punctuation">(</span><span class="token string">"^.*?(Java 8|java 8|JAVA 8).*$"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token comment">//Remove the comment from the line below if you want to see it running on your editor, </span>
+                        <span class="token comment">//or wait for the File at the end of the execution</span>
+                        <span class="token comment">//System.out.println(article.attr("abs:href"));</span>
+
+                        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> temporary <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        temporary<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>article<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//The title of the article</span>
+                        temporary<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>article<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"abs:href"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//The URL of the article</span>
+                        articles<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>temporary<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">writeToFile</span><span class="token punctuation">(</span>String filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        FileWriter writer<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            writer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            articles<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>a <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+                <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                    String temp <span class="token operator">=</span> <span class="token string">"- Title: "</span> <span class="token operator">+</span> a<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" (link: "</span> <span class="token operator">+</span> a<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">")\n"</span><span class="token punctuation">;</span>
+                    <span class="token comment">//display to console</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment">//save to file</span>
+                    writer<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            writer<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Extractor bwc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Extractor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        bwc<span class="token punctuation">.</span><span class="token function">getPageLinks</span><span class="token punctuation">(</span><span class="token string">"http://www.mkyong.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        bwc<span class="token punctuation">.</span><span class="token function">getArticles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        bwc<span class="token punctuation">.</span><span class="token function">writeToFile</span><span class="token punctuation">(</span><span class="token string">"Java 8 Articles"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Output:</p>
+<div class="pic">
+<noscript><img src="http://www.mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3.png" alt="jsoup-web-crawler-example-3" width="1405" height="435" class="alignnone size-full wp-image-14334" srcset="https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3.png 1405w, https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3-300x93.png 300w, https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3-768x238.png 768w, https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3-1024x317.png 1024w" sizes="(max-width: 1405px) 100vw, 1405px" /></noscript><img src="./jsoup – Basic web crawler example – Mkyong.com_files/jsoup-web-crawler-example-3.png" data-src="http://www.mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3.png" alt="jsoup-web-crawler-example-3" width="1405" height="435" class="alignnone size-full wp-image-14334 lazyloaded" data-srcset="https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3.png 1405w, https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3-300x93.png 300w, https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3-768x238.png 768w, https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3-1024x317.png 1024w" data-sizes="(max-width: 1405px) 100vw, 1405px" sizes="(max-width: 1405px) 100vw, 1405px" srcset="https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3.png 1405w, https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3-300x93.png 300w, https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3-768x238.png 768w, https://mkyong.com/wp-content/uploads/2017/01/jsoup-web-crawler-example-3-1024x317.png 1024w">
+</div>
+<h2>References</h2>
+<ol>
+<li><a href="https://www.promptcloud.com/data-scraping-vs-data-crawling/" target="_blank">PromptCloud – Data Scraping vs Data Crawling</a></li>
+<li><a href="https://www.promptcloud.com/how-web-crawler-works/" target="_blank">PromptCloud – How a Web Crawler Works</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Web_crawler" target="_blank">Wikipedia – Web crawler</a></li>
+<li><a href="https://frontera.readthedocs.io/en/v0.2.0/topics/what-is-a-crawl-frontier.html" target="_blank">What is a Crawl Frontier?</a></li>
+</ol>
+
+		<div class="row">
+			<div class="col">
+			<div class="post-tag"><a href="https://mkyong.com/tag/crawler/" rel="tag">crawler</a>  <a href="https://mkyong.com/tag/html-parser/" rel="tag">html parser</a>  <a href="https://mkyong.com/tag/jsoup/" rel="tag">jsoup</a>  <a href="https://mkyong.com/tag/parser/" rel="tag">parser</a>  <a href="https://mkyong.com/tag/web-crawler/" rel="tag">web crawler</a></div>			</div>
+		</div>
+
+	</div>
+	<!-- /.post-content -->
+
+	<input type="hidden" id="mkyong-current-postId" value="14330">
+
+        <!-- related posts -->
+        <div id="mk-afterpost-related" style=""><div id="afterpost-related-container"><h4>Related Articles</h4> <div class="row no-gutters">  <div class="col"><div class="pv-flex-wrapper"><div class="pv-box kformat">237k</div><a href="https://mkyong.com/java/jsoup-html-parser-hello-world-examples/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=afterpost-related&amp;utm_content=link0">jsoup HTML parser hello world examples</a></div><div class="pv-flex-wrapper"><div class="pv-box kformat">1k</div><a href="https://mkyong.com/java/java-pretty-print-html/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=afterpost-related&amp;utm_content=link1">Java - Pretty Print HTML</a></div><div class="pv-flex-wrapper"><div class="pv-box kformat">2k</div><a href="https://mkyong.com/java/java-how-to-get-all-links-from-a-web-page/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=afterpost-related&amp;utm_content=link2">Java - How to get all links from a web p...</a></div><div class="pv-flex-wrapper"><div class="pv-box kformat">7k</div><a href="https://mkyong.com/java/jsoup-get-favicon-from-html-page/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=afterpost-related&amp;utm_content=link3">Jsoup - Get favicon from html page</a></div><div class="pv-flex-wrapper"><div class="pv-box kformat">32k</div><a href="https://mkyong.com/java/jsoup-send-search-query-to-google/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=afterpost-related&amp;utm_content=link4">jsoup : Send search query to Google</a></div><div class="pv-flex-wrapper"><div class="pv-box kformat">14k</div><a href="https://mkyong.com/java/jsoup-check-redirect-url/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=afterpost-related&amp;utm_content=link5">Jsoup - Check Redirect URL</a></div></div>  <div class="col d-none d-lg-block"><div class="pv-flex-wrapper"><div class="pv-box kformat">8k</div><a href="https://mkyong.com/docker/docker-and-java-application-examples/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=afterpost-related&amp;utm_content=link6">Docker and Java Application examples</a></div></div> </div></div></div>
+	
+	<div class="box-ads">
+
+	
+<div class="container">
+    <div class="row">
+        <div class="col center ads-container">
+			
+<div class="adsbyvli" data-ad-slot="vi_9782570"></div>
+<script type="text/javascript">(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9782570")})</script>
+			
+        </div>
+    </div>
+</div>
+
+	</div>
+	
+	<div id="author-container">		<div id="author-info" class="media rounded"><noscript><img alt='author image' src='https://secure.gravatar.com/avatar/9f8418a196c6ce3840f66bb957382ebc?s=96&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9f8418a196c6ce3840f66bb957382ebc?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo d-flex mr-2 rounded-circle' height='96' width='96' /></noscript><img alt="author image" src="./jsoup – Basic web crawler example – Mkyong.com_files/9f8418a196c6ce3840f66bb957382ebc(1).png" data-src="https://secure.gravatar.com/avatar/9f8418a196c6ce3840f66bb957382ebc?s=96&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/9f8418a196c6ce3840f66bb957382ebc?s=192&amp;d=mm&amp;r=g 2x" class="avatar avatar-96 photo d-flex mr-2 rounded-circle lazyloaded" height="96" width="96" srcset="https://secure.gravatar.com/avatar/9f8418a196c6ce3840f66bb957382ebc?s=192&amp;d=mm&amp;r=g 2x">				<div class="media-body">					<h4 class="mt-1">Marilena</h4>Marilena Panagiotidou is a senior at University of the Aegean, in the department of Information and Communication Systems Engineering. She is passionate about programming in a wide range of languages. You can contact her at <a href="mailto:an3liram@gmail.com">an3liram@gmail.com</a> or through her <a href="https://www.linkedin.com/in/marilena-panagiotidou-38995341">LinkedIn</a>. Read all published posts by <a href="https://mkyong.com/author/marilena/" title="Marilena" class="author" rel="author">Marilena</a>				</div>		</div></div>	
+	<h4>Comments</h4>
+	<div id="comment">
+		    <div class="wpdiscuz_top_clearing"></div>
+    <div id="comments" class="comments-area"><div id="respond" style="width: 0;height: 0;clear: both;margin: 0;padding: 0;"></div>        <div id="wpcomm" class="wpdiscuz_unauth wpd-default">
+            <div class="wpdiscuz-form-top-bar">
+                <div class="wpdiscuz-ftb-left">
+                                                            <div id="wc_show_hide_loggedin_username">
+                                            </div>
+                </div>
+                                <div class="wpd-clear"></div>
+            </div>
+
+
+                        <div class="wc_social_plugin_wrapper">
+                            </div>
+                    <div class="wc-form-wrapper wc-main-form-wrapper" id="wc-main-form-wrapper-0_0">
+            <div class="wpdiscuz-comment-message" style="display: block;"></div>
+                                        <form class="wc_comm_form wc_main_comm_form" method="post" enctype="multipart/form-data">
+                    <div class="wc-field-comment">
+                        <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap ">
+
+                                                                                                        <div class="wc-field-avatararea">
+                                        <noscript><img alt='avatar' src='https://secure.gravatar.com/avatar/?s=40&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/?s=80&#038;d=mm&#038;r=g 2x' class='avatar avatar-40 photo avatar-default' height='40' width='40' /></noscript><img alt="avatar" src="./jsoup – Basic web crawler example – Mkyong.com_files/none.png" data-src="https://secure.gravatar.com/avatar/?s=40&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo avatar-default ls-is-cached lazyloaded" height="40" width="40" srcset="https://secure.gravatar.com/avatar/?s=80&amp;d=mm&amp;r=g 2x">                                    </div>
+                                
+                                <textarea id="wc-textarea-0_0" placeholder="Join the discussion..." required="" name="wc_comment" class="wc_comment wpd-field"></textarea>
+                                                                                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="wc-form-footer" style="display: none;"> 
+                                <div class="wpd-form-row">
+                    <div class="wpd-form-col-left">
+                        <div class="wpdiscuz-item wc_name-wrapper wpd-has-icon">
+                                <div class="wpd-field-icon"><i class="fas fa-user"></i></div>
+                                                <input value="" required="required" class="wc_name wpd-field" type="text" name="wc_name" placeholder="Name*" maxlength="50" pattern=".{3,50}" title="">
+                            </div>
+                        <div class="wpdiscuz-item wc_email-wrapper wpd-has-icon">
+                                    <div class="wpd-field-icon"><i class="fas fa-at"></i></div>
+                                                <input value="" required="required" class="wc_email wpd-field" type="email" name="wc_email" placeholder="Email*">
+                            </div>
+                    </div>
+                <div class="wpd-form-col-right">
+                    <div class="wc-field-submit">
+                                            
+                                            <label class="wpd_label" title="Notify of new replies to this comment">
+                            <input id="wc_notification_new_comment-0_0" class="wc_notification_new_comment-0_0 wpd_label__checkbox" value="comment" type="checkbox" name="wpdiscuz_notification_type">
+                            <span class="wpd_label__text">
+                                <span class="wpd_label__check">
+                                    <i class="fas fa-bell wpdicon wpdicon-on"></i>
+                                    <i class="fas fa-bell-slash wpdicon wpdicon-off"></i>
+                                </span>
+                            </span>
+                        </label>
+                                                                <input class="wc_comm_submit wc_not_clicked button alt" type="submit" name="submit" value="Post Comment">
+        </div>
+                </div>
+                    <div class="clearfix"></div>
+        </div>
+                            </div>
+                    <div class="clearfix"></div>
+                    <input type="hidden" class="wpdiscuz_unique_id" value="0_0" name="wpdiscuz_unique_id">
+                </form>
+                    <div class="wpdiscuz-form-bottom-bar">
+                    <div class="wpdiscuz-fbb-left">
+                                                                        <div class="wpdiscuz-stat wpd-stat-threads wpd-tooltip-left">
+                        <i class="fas fa-align-left fa-rotate-180" data-fa-transform="rotate-180"></i><span class="wpd-stat-threads-count">8</span>
+                        <wpdtip>Comment threads</wpdtip>
+                    </div>
+                                                                                        <div class="wpdiscuz-stat wpd-stat-replies wpd-tooltip-left">
+                        <i class="far fa-comments"></i><span class="wpd-stat-replies-count">0</span>
+                        <wpdtip>Thread replies</wpdtip>
+                    </div>
+                                                                                        <div class="wpdiscuz-stat wpd-stat-subscribers wpd-tooltip-left">
+                        <i class="fas fa-rss"></i><span>0</span>
+                        <wpdtip>Followers</wpdtip>
+                    </div>&nbsp;
+                                                                    
+                    <div class="wpdiscuz-stat wpd-stat-reacted wpd-tooltip">
+                        <i class="fas fa-bolt"></i>
+                        <wpdtip>Most reacted comment</wpdtip>
+                    </div>
+                                                                    <div class="wpdiscuz-stat wpd-stat-hot wpd-tooltip">
+                        <i class="fab fa-hotjar"></i>
+                        <wpdtip>Hottest comment thread</wpdtip>
+                    </div>
+                            </div>
+                                        <div class="wpdiscuz-fbb-right">
+                                                        <div class="wpdiscuz-stat wpd-stat-users wpd-tooltip">
+                        <i class="fas fa-user-circle"></i> <span class="wpd-stat-authors-count">7</span>
+                        <wpdtip>Comment authors</wpdtip>
+                    </div>
+                                                                                                            <div class="wpdiscuz-users wpd-tooltip-right">
+                        <noscript><img alt='Mat' src='https://secure.gravatar.com/avatar/afcd0582ce145446f53187a5439797f8?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/afcd0582ce145446f53187a5439797f8?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' title='Mat'/></noscript><img alt="Mat" src="./jsoup – Basic web crawler example – Mkyong.com_files/afcd0582ce145446f53187a5439797f8.png" data-src="https://secure.gravatar.com/avatar/afcd0582ce145446f53187a5439797f8?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/afcd0582ce145446f53187a5439797f8?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo lazyloaded" height="64" width="64" title="Mat" srcset="https://secure.gravatar.com/avatar/afcd0582ce145446f53187a5439797f8?s=128&amp;d=mm&amp;r=g 2x"><noscript><img alt='Prateek' src='https://secure.gravatar.com/avatar/c0faa7f77d111aeca171f51b1e349129?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/c0faa7f77d111aeca171f51b1e349129?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' title='Prateek'/></noscript><img alt="Prateek" src="./jsoup – Basic web crawler example – Mkyong.com_files/c0faa7f77d111aeca171f51b1e349129.png" data-src="https://secure.gravatar.com/avatar/c0faa7f77d111aeca171f51b1e349129?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/c0faa7f77d111aeca171f51b1e349129?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo lazyloaded" height="64" width="64" title="Prateek" srcset="https://secure.gravatar.com/avatar/c0faa7f77d111aeca171f51b1e349129?s=128&amp;d=mm&amp;r=g 2x"><noscript><img alt='Kiran' src='https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' title='Kiran'/></noscript><img alt="Kiran" src="./jsoup – Basic web crawler example – Mkyong.com_files/6b9d678a0b7fb5fdbf613ba16c6bd1bf.png" data-src="https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo lazyloaded" height="64" width="64" title="Kiran" srcset="https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=128&amp;d=mm&amp;r=g 2x"><noscript><img alt='Anna' src='https://secure.gravatar.com/avatar/cd4de18384618751616d60090abb1f4f?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/cd4de18384618751616d60090abb1f4f?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' title='Anna'/></noscript><img alt="Anna" src="./jsoup – Basic web crawler example – Mkyong.com_files/cd4de18384618751616d60090abb1f4f.png" data-src="https://secure.gravatar.com/avatar/cd4de18384618751616d60090abb1f4f?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/cd4de18384618751616d60090abb1f4f?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo lazyloaded" height="64" width="64" title="Anna" srcset="https://secure.gravatar.com/avatar/cd4de18384618751616d60090abb1f4f?s=128&amp;d=mm&amp;r=g 2x"><noscript><img alt='Dinesh' src='https://secure.gravatar.com/avatar/b205494b2c231477b9860f83ce446180?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b205494b2c231477b9860f83ce446180?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' title='Dinesh'/></noscript><img alt="Dinesh" src="./jsoup – Basic web crawler example – Mkyong.com_files/b205494b2c231477b9860f83ce446180.png" data-src="https://secure.gravatar.com/avatar/b205494b2c231477b9860f83ce446180?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/b205494b2c231477b9860f83ce446180?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo lazyloaded" height="64" width="64" title="Dinesh" srcset="https://secure.gravatar.com/avatar/b205494b2c231477b9860f83ce446180?s=128&amp;d=mm&amp;r=g 2x">                        <wpdtip>Recent comment authors</wpdtip>
+                    </div>
+                            </div>
+                <div class="wpd-clear"></div>
+    </div>
+            </div>
+                <div id="wpdiscuz_hidden_secondary_form" style="display: none;">
+                    <div class="wc-form-wrapper wc-secondary-form-wrapper" id="wc-secondary-form-wrapper-wpdiscuzuniqueid" style="display: none;">
+            <div class="wpdiscuz-comment-message" style="display: block;"></div>
+                            <div class="wc-secondary-forms-social-content"></div><div class="clearfix"></div>
+                                        <form class="wc_comm_form wc-secondary-form-wrapper" method="post" enctype="multipart/form-data">
+                    <div class="wc-field-comment">
+                        <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap ">
+
+                                                                                                        <div class="wc-field-avatararea">
+                                        <noscript><img alt='avatar' src='https://secure.gravatar.com/avatar/?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo avatar-default' height='48' width='48' /></noscript><img alt="avatar" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2048%2048%22%3E%3C/svg%3E" data-src="https://secure.gravatar.com/avatar/?s=48&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g 2x" class="lazyload avatar avatar-48 photo avatar-default" height="48" width="48">                                    </div>
+                                
+                                <textarea id="wc-textarea-wpdiscuzuniqueid" placeholder="Join the discussion..." required="" name="wc_comment" class="wc_comment wpd-field"></textarea>
+                                                                                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="wc-form-footer" style="display: none;"> 
+                                <div class="wpd-form-row">
+                    <div class="wpd-form-col-left">
+                        <div class="wpdiscuz-item wc_name-wrapper wpd-has-icon">
+                                <div class="wpd-field-icon"><i class="fas fa-user"></i></div>
+                                                <input value="" required="required" class="wc_name wpd-field" type="text" name="wc_name" placeholder="Name*" maxlength="50" pattern=".{3,50}" title="">
+                            </div>
+                        <div class="wpdiscuz-item wc_email-wrapper wpd-has-icon">
+                                    <div class="wpd-field-icon"><i class="fas fa-at"></i></div>
+                                                <input value="" required="required" class="wc_email wpd-field" type="email" name="wc_email" placeholder="Email*">
+                            </div>
+                    </div>
+                <div class="wpd-form-col-right">
+                    <div class="wc-field-submit">
+                                            
+                                            <label class="wpd_label" title="Notify of new replies to this comment">
+                            <input id="wc_notification_new_comment-wpdiscuzuniqueid" class="wc_notification_new_comment-wpdiscuzuniqueid wpd_label__checkbox" value="comment" type="checkbox" name="wpdiscuz_notification_type">
+                            <span class="wpd_label__text">
+                                <span class="wpd_label__check">
+                                    <i class="fas fa-bell wpdicon wpdicon-on"></i>
+                                    <i class="fas fa-bell-slash wpdicon wpdicon-off"></i>
+                                </span>
+                            </span>
+                        </label>
+                                                                <input class="wc_comm_submit wc_not_clicked button alt" type="submit" name="submit" value="Post Comment">
+        </div>
+                </div>
+                    <div class="clearfix"></div>
+        </div>
+                            </div>
+                    <div class="clearfix"></div>
+                    <input type="hidden" class="wpdiscuz_unique_id" value="wpdiscuzuniqueid" name="wpdiscuz_unique_id">
+                </form>
+                        </div>
+                </div>
+                                           
+
+                                    <div class="wpdiscuz-front-actions">
+                                                                        
+                            <div class="wpdiscuz-sort-buttons" style="font-size:14px; color: #777;">
+                                <i class="fas fa-caret-up" aria-hidden="true"></i> 
+                                <span class="wpdiscuz-sort-button wpdiscuz-date-sort-desc ">newest</span> <i class="fas fa-caret-up" aria-hidden="true"></i> 
+                                <span class="wpdiscuz-sort-button wpdiscuz-date-sort-asc ">oldest</span>
+                                                                    <i class="fas fa-caret-up" aria-hidden="true"></i> <span class="wpdiscuz-sort-button wpdiscuz-vote-sort-up wpdiscuz-sort-button-active">most voted</span>
+                                                            </div>
+                                                <div class="clearfix"></div>
+                    </div>
+                                
+                                <div id="wcThreadWrapper" class="wc-thread-wrapper">
+                    <div id="wc-comm-1055702_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><noscript><img alt='Anna' src='https://secure.gravatar.com/avatar/cd4de18384618751616d60090abb1f4f?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/cd4de18384618751616d60090abb1f4f?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /></noscript><img alt="Anna" src="./jsoup – Basic web crawler example – Mkyong.com_files/cd4de18384618751616d60090abb1f4f.png" data-src="https://secure.gravatar.com/avatar/cd4de18384618751616d60090abb1f4f?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/cd4de18384618751616d60090abb1f4f?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo lazyloaded" height="64" width="64" srcset="https://secure.gravatar.com/avatar/cd4de18384618751616d60090abb1f4f?s=128&amp;d=mm&amp;r=g 2x"><div class="wc-blog-guest wc-comment-label"><span>Guest</span></div></div><div id="comment-1055702" class="wc-comment-right"><div class="wc-comment-header"><div class="wc-comment-author ">Anna</div><div class="wc-comment-link"></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Hello, what if i dont know the MAX DEPTH of the website?</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Vote Up</span></span><span class="wc-vote-result">12</span><span class="wc-vote-link wc-down wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Vote Down</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Reply"><i class="far fa-comments" aria-hidden="true"></i> Reply</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>2 years ago</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1055702_0" class="wpdiscuz_clear"></div></div><div id="wc-comm-1056202_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><noscript><img alt='Kiran' src='https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /></noscript><img alt="Kiran" src="./jsoup – Basic web crawler example – Mkyong.com_files/6b9d678a0b7fb5fdbf613ba16c6bd1bf.png" data-src="https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo ls-is-cached lazyloaded" height="64" width="64" srcset="https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=128&amp;d=mm&amp;r=g 2x"><div class="wc-blog-guest wc-comment-label"><span>Guest</span></div></div><div id="comment-1056202" class="wc-comment-right"><div class="wc-comment-header"><div class="wc-comment-author ">Kiran</div><div class="wc-comment-link"></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I am getting java.net.SocketException: Connection reset error when crawling https website</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Vote Up</span></span><span class="wc-vote-result">5</span><span class="wc-vote-link wc-down wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Vote Down</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Reply"><i class="far fa-comments" aria-hidden="true"></i> Reply</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>1 year ago</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1056202_0" class="wpdiscuz_clear"></div></div><div id="wc-comm-1056291_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><noscript><img alt='Prateek' src='https://secure.gravatar.com/avatar/c0faa7f77d111aeca171f51b1e349129?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/c0faa7f77d111aeca171f51b1e349129?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /></noscript><img alt="Prateek" src="./jsoup – Basic web crawler example – Mkyong.com_files/c0faa7f77d111aeca171f51b1e349129.png" data-src="https://secure.gravatar.com/avatar/c0faa7f77d111aeca171f51b1e349129?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/c0faa7f77d111aeca171f51b1e349129?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo ls-is-cached lazyloaded" height="64" width="64" srcset="https://secure.gravatar.com/avatar/c0faa7f77d111aeca171f51b1e349129?s=128&amp;d=mm&amp;r=g 2x"><div class="wc-blog-guest wc-comment-label"><span>Guest</span></div></div><div id="comment-1056291" class="wc-comment-right"><div class="wc-comment-header"><div class="wc-comment-author ">Prateek</div><div class="wc-comment-link"></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Hello,<br>
+Really nice article, it helped us to get starting.</p>
+<p>Is there any way to scrape dynamic website. A website which decides through javascript code about what cotent needs to be displayed and do not use href kind of structure for navigation?</p>
+<p>thanks<br>
+-Prateek</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Vote Up</span></span><span class="wc-vote-result">2</span><span class="wc-vote-link wc-down wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Vote Down</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Reply"><i class="far fa-comments" aria-hidden="true"></i> Reply</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>1 year ago</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1056291_0" class="wpdiscuz_clear"></div></div><div id="wc-comm-1053670_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><noscript><img alt='Frank' src='https://secure.gravatar.com/avatar/c53166cd927d6c8682b30009c232a038?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/c53166cd927d6c8682b30009c232a038?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /></noscript><img alt="Frank" src="./jsoup – Basic web crawler example – Mkyong.com_files/c53166cd927d6c8682b30009c232a038.jpeg" data-src="https://secure.gravatar.com/avatar/c53166cd927d6c8682b30009c232a038?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/c53166cd927d6c8682b30009c232a038?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo lazyloaded" height="64" width="64" srcset="https://secure.gravatar.com/avatar/c53166cd927d6c8682b30009c232a038?s=128&amp;d=mm&amp;r=g 2x"><div class="wc-blog-guest wc-comment-label"><span>Guest</span></div></div><div id="comment-1053670" class="wc-comment-right"><div class="wc-comment-header"><div class="wc-comment-author ">Frank</div><div class="wc-comment-link"></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>for Document document = Jsoup.connect(URL)..get(); I cannot get the full HTML elements. Even I do something like below I still cannot get the full elements. any idea on this? Document document = Jsoup.connect(URL).header(“Accept-Encoding”, “gzip, deflate”) .userAgent(“Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36”) .maxBodySize(0) .timeout(600000) .get();</p></div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Vote Up</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Vote Down</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Reply"><i class="far fa-comments" aria-hidden="true"></i> Reply</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>2 years ago</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1053670_0" class="wpdiscuz_clear"></div></div><div id="wc-comm-1053673_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><noscript><img alt='Oren Hoffman' src='https://secure.gravatar.com/avatar/dcd637c7400d29a6f6aa241d8c5146b7?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/dcd637c7400d29a6f6aa241d8c5146b7?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /></noscript><img alt="Oren Hoffman" src="./jsoup – Basic web crawler example – Mkyong.com_files/dcd637c7400d29a6f6aa241d8c5146b7.png" data-src="https://secure.gravatar.com/avatar/dcd637c7400d29a6f6aa241d8c5146b7?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/dcd637c7400d29a6f6aa241d8c5146b7?s=128&amp;d=mm&amp;r=g 2x" class="avatar avatar-64 photo lazyloaded" height="64" width="64" srcset="https://secure.gravatar.com/avatar/dcd637c7400d29a6f6aa241d8c5146b7?s=128&amp;d=mm&amp;r=g 2x"><div class="wc-blog-guest wc-comment-label"><span>Guest</span></div></div><div id="comment-1053673" class="wc-comment-right"><div class="wc-comment-header"><div class="wc-comment-author ">Oren Hoffman</div><div class="wc-comment-link"></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Thank you very much for all help Marilena !</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Vote Up</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Vote Down</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Reply"><i class="far fa-comments" aria-hidden="true"></i> Reply</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>2 years ago</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1053673_0" class="wpdiscuz_clear"></div></div><div id="wc-comm-1054348_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><noscript><img alt='Dinesh' src='https://secure.gravatar.com/avatar/b205494b2c231477b9860f83ce446180?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b205494b2c231477b9860f83ce446180?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /></noscript><img alt="Dinesh" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3C/svg%3E" data-src="https://secure.gravatar.com/avatar/b205494b2c231477b9860f83ce446180?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/b205494b2c231477b9860f83ce446180?s=128&amp;d=mm&amp;r=g 2x" class="lazyload avatar avatar-64 photo" height="64" width="64"><div class="wc-blog-guest wc-comment-label"><span>Guest</span></div></div><div id="comment-1054348" class="wc-comment-right"><div class="wc-comment-header"><div class="wc-comment-author ">Dinesh</div><div class="wc-comment-link"></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Really Helpful and well explained. 🙂</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Vote Up</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Vote Down</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Reply"><i class="far fa-comments" aria-hidden="true"></i> Reply</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>2 years ago</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1054348_0" class="wpdiscuz_clear"></div></div><div id="wc-comm-1056203_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><noscript><img alt='Kiran' src='https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /></noscript><img alt="Kiran" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3C/svg%3E" data-src="https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/6b9d678a0b7fb5fdbf613ba16c6bd1bf?s=128&amp;d=mm&amp;r=g 2x" class="lazyload avatar avatar-64 photo" height="64" width="64"><div class="wc-blog-guest wc-comment-label"><span>Guest</span></div></div><div id="comment-1056203" class="wc-comment-right"><div class="wc-comment-header"><div class="wc-comment-author ">Kiran</div><div class="wc-comment-link"></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I am using jdk 7 and jsoup 1.11.3</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Vote Up</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Vote Down</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Reply"><i class="far fa-comments" aria-hidden="true"></i> Reply</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>1 year ago</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1056203_0" class="wpdiscuz_clear"></div></div><div id="wc-comm-1058158_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><noscript><img alt='Mat' src='https://secure.gravatar.com/avatar/afcd0582ce145446f53187a5439797f8?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/afcd0582ce145446f53187a5439797f8?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /></noscript><img alt="Mat" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3C/svg%3E" data-src="https://secure.gravatar.com/avatar/afcd0582ce145446f53187a5439797f8?s=64&amp;d=mm&amp;r=g" data-srcset="https://secure.gravatar.com/avatar/afcd0582ce145446f53187a5439797f8?s=128&amp;d=mm&amp;r=g 2x" class="lazyload avatar avatar-64 photo" height="64" width="64"><div class="wc-blog-guest wc-comment-label"><span>Guest</span></div></div><div id="comment-1058158" class="wc-comment-right"><div class="wc-comment-header"><div class="wc-comment-author ">Mat</div><div class="wc-comment-link"></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I get “connect timed out” errors for many, but not all of the URLs, which this program attempts to connect to using this code.<br>
+Any idea why?<br>
+Thanks in advance!</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Vote Up</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Vote Down</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Reply"><i class="far fa-comments" aria-hidden="true"></i> Reply</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>10 months ago</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1058158_0" class="wpdiscuz_clear"></div></div>                
+                    <div class="wpdiscuz-comment-pagination">
+                                            </div>
+                </div>
+                <div class="wpdiscuz_clear"></div>
+                                                                                </div>
+        </div>
+        <div id="wpdiscuz-loading-bar" class="wpdiscuz-loading-bar wpdiscuz-loading-bar-unauth"></div>
+        	</div>
+
+</article>
+		</div>
+
+		<!-- only display if screen >=1200px -->
+		<div class="col-3 d-1200" id="sidebar">
+			
+<div id="mk-sidebar-featured-1" style="">    <div class="sidebar-box-ads">      <a href="https://mkyong.com/tutorials/spring-boot-tutorials/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-featured&amp;utm_content=link0" target="_blank">        <img src="./jsoup – Basic web crawler example – Mkyong.com_files/spring-logo.webp" class="card-img-top" alt="">      </a>      <a href="https://mkyong.com/tutorials/spring-boot-tutorials/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-featured&amp;utm_content=link0" target="_blank">Spring Boot Tutorials</a>    </div></div>
+
+<div class="sidebar-box-ads ads-container">
+	<div class="adsbyvli" data-ad-slot="vi_9783135"></div>
+	<script type="text/javascript">(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9783135")})</script>
+</div>
+
+<div id="mk-sidebar-display" style=""><div class="sidebar-header">Related Articles</div><div class="container sidebar-box-container"><div class="row row-margin-bottom"><div class="col-2 col-no-padding"><div class="pv-box kformat">237k</div></div><div class="col col-padding-link"><a href="https://mkyong.com/java/jsoup-html-parser-hello-world-examples/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-related&amp;utm_content=link0">jsoup HTML parser hello world examples</a></div></div><div class="row row-margin-bottom"><div class="col-2 col-no-padding"><div class="pv-box kformat">1k</div></div><div class="col col-padding-link"><a href="https://mkyong.com/java/java-pretty-print-html/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-related&amp;utm_content=link1">Java - Pretty Print HTML</a></div></div><div class="row row-margin-bottom"><div class="col-2 col-no-padding"><div class="pv-box kformat">2k</div></div><div class="col col-padding-link"><a href="https://mkyong.com/java/java-how-to-get-all-links-from-a-web-page/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-related&amp;utm_content=link2">Java - How to get all links from a web page?</a></div></div><div class="row row-margin-bottom"><div class="col-2 col-no-padding"><div class="pv-box kformat">7k</div></div><div class="col col-padding-link"><a href="https://mkyong.com/java/jsoup-get-favicon-from-html-page/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-related&amp;utm_content=link3">Jsoup - Get favicon from html page</a></div></div><div class="row row-margin-bottom"><div class="col-2 col-no-padding"><div class="pv-box kformat">32k</div></div><div class="col col-padding-link"><a href="https://mkyong.com/java/jsoup-send-search-query-to-google/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-related&amp;utm_content=link4">jsoup : Send search query to Google</a></div></div><div class="row row-margin-bottom"><div class="col-2 col-no-padding"><div class="pv-box kformat">14k</div></div><div class="col col-padding-link"><a href="https://mkyong.com/java/jsoup-check-redirect-url/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-related&amp;utm_content=link5">Jsoup - Check Redirect URL</a></div></div><div class="row row-margin-bottom"><div class="col-2 col-no-padding"><div class="pv-box kformat">8k</div></div><div class="col col-padding-link"><a href="https://mkyong.com/docker/docker-and-java-application-examples/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-related&amp;utm_content=link6">Docker and Java Application examples</a></div></div></div></div>
+
+<div id="mk-sidebar-featured-2" style="">    <div class="sidebar-box-ads">      <a href="https://mkyong.com/tutorials/java-8-tutorials/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-featured&amp;utm_content=link1" target="_blank">        <img src="./jsoup – Basic web crawler example – Mkyong.com_files/java-8-logo.webp" class="card-img-top" alt="">      </a>      <a href="https://mkyong.com/tutorials/java-8-tutorials/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=sidebar-featured&amp;utm_content=link1" target="_blank">Java 8 Tutorials</a>    </div></div>
+	
+<div class="sidebar-box-sticky">
+	<div class="sidebar-box-ads">
+	<div class="adsbyvli" data-ad-slot="vi_9782361"></div>
+	<script type="text/javascript"> vitag.videoDiscoverConfig = { noFixedVideo: true, random: true, hidePlaylist: true, alwayDisplayAd: false, wgTitle: "FEATURED VIDEOS", wgTitleColor: "#eee", contentClick: "inline", titleColor: "#fff", titleHoverColor: "#ff4f02", background: "", selectedBackground: "#333", }; (vitag.Init = window.vitag.Init || []).push(function(){viAPItag.initInstreamBanner("vi_9782361")});
+	</script>
+    </div>
+	
+	<div class="sidebar-box-ads ads-container">
+		<div class="adsbyvli" data-ad-slot="vi_9789964"></div>
+		<script type="text/javascript">(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9789964")})</script>
+	</div>
+</div>
+
+		</div>
+
+	</div>
+    <!--/.row -->
+
+	<div id="mk-footer-featured" style=""><div class="container">  <div class="card-deck">    <div class="card">      <a href="https://mkyong.com/java/what-is-new-in-java-14/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-featured&amp;utm_content=link0" target="_blank">        <img src="./jsoup – Basic web crawler example – Mkyong.com_files/java-14-logo.webp" class="card-img-top" alt="">      </a>    <div class="card-body">       <h5 class="card-title">           <a href="https://mkyong.com/java/what-is-new-in-java-14/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-featured&amp;utm_content=link0" target="_blank">What is new in Java 14</a>        </h5>     </div>    </div>    <div class="card">      <a href="https://mkyong.com/docker/docker-spring-boot-examples/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-featured&amp;utm_content=link1" target="_blank">        <img src="./jsoup – Basic web crawler example – Mkyong.com_files/docker-logo.png" class="card-img-top" alt="">      </a>    <div class="card-body">       <h5 class="card-title">           <a href="https://mkyong.com/docker/docker-spring-boot-examples/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-featured&amp;utm_content=link1" target="_blank">Docker and Spring Boot</a>        </h5>     </div>    </div>    <div class="card d-md-none d-lg-block">      <a href="https://mkyong.com/tutorials/java-json-tutorials/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-featured&amp;utm_content=link2" target="_blank">        <img src="./jsoup – Basic web crawler example – Mkyong.com_files/json-logo.webp" class="card-img-top" alt="">      </a>    <div class="card-body">       <h5 class="card-title">           <a href="https://mkyong.com/tutorials/java-json-tutorials/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-featured&amp;utm_content=link2" target="_blank">Java JSON Tutorials</a>        </h5>     </div>    </div>    <div class="card d-md-none d-lg-block">      <a href="https://mkyong.com/java/java-jmh-benchmark-tutorial/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-featured&amp;utm_content=link3" target="_blank">        <img src="./jsoup – Basic web crawler example – Mkyong.com_files/jmh-logo.webp" class="card-img-top" alt="">      </a>    <div class="card-body">       <h5 class="card-title">           <a href="https://mkyong.com/java/java-jmh-benchmark-tutorial/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-featured&amp;utm_content=link3" target="_blank">JMH Benchmark</a>        </h5>     </div>    </div>  </div></div></div>
+	
+</div>
+<!--/.container -->
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="box-ads center d-1200">
+		<!-- Ads here -->
+	
+	</div>
+
+<footer>
+
+	<div id="mk-footer-rising" style=""><div class="container" id="footer-rising-container"><h4>Rising Articles</h4> <div class="row">  <div class="col"><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+3k</div><a href="https://mkyong.com/spring-boot/spring-boot-spring-data-jpa-postgresql/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-left&amp;utm_content=link0">Spring Boot + Spring data JPA + PostgreS...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+2.6k</div><a href="https://mkyong.com/spring-boot/spring-boot-jdbc-examples/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-left&amp;utm_content=link1">Spring Boot JDBC Examples</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+2.5k</div><a href="https://mkyong.com/spring-boot/spring-boot-how-to-send-email-via-smtp/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-left&amp;utm_content=link2">Spring Boot - How to send email via SMTP</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+2.5k</div><a href="https://mkyong.com/java/jackson-how-to-parse-json/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-left&amp;utm_content=link3">Jackson - How to parse JSON</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+2.4k</div><a href="https://mkyong.com/javascript/javascript-get-selected-value-from-dropdown-list/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-left&amp;utm_content=link4">JavaScript - Get selected value from dro...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+2.3k</div><a href="https://mkyong.com/python/python-how-to-convert-float-to-string/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-left&amp;utm_content=link5">Python - How to convert float to String</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+2.2k</div><a href="https://mkyong.com/java/java-how-to-get-keys-and-values-from-map/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-left&amp;utm_content=link6">Java - How to get keys and values from M...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+2.2k</div><a href="https://mkyong.com/java/how-to-parse-json-with-gson/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-left&amp;utm_content=link7">Gson - How to parse JSON</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+2.1k</div><a href="https://mkyong.com/intellij/how-to-change-the-intellij-idea-jdk-version/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-left&amp;utm_content=link8">How to change the IntelliJ IDEA JDK vers...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+2.1k</div><a href="https://mkyong.com/spring-boot/spring-boot-spring-data-jpa/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-left&amp;utm_content=link9">Spring Boot + Spring data JPA</a></div></div>  <div class="col d-none d-lg-block"><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+4.7k</div><a href="https://mkyong.com/python/python-how-to-list-all-files-in-a-directory/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-middle&amp;utm_content=link0">Python - How to list all files in a dire...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+4.3k</div><a href="https://mkyong.com/java8/java-8-how-to-sort-list-with-stream-sorted/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-middle&amp;utm_content=link1">Java 8 - How to sort list with stream.so...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+4.1k</div><a href="https://mkyong.com/java/java-check-if-array-contains-a-certain-value/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-middle&amp;utm_content=link2">Java - Check if Array contains a certain...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+3.6k</div><a href="https://mkyong.com/java/how-to-round-double-float-value-to-2-decimal-points-in-java/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-middle&amp;utm_content=link3">Java - How to round double / float value...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+3.2k</div><a href="https://mkyong.com/spring-boot/spring-rest-validation-example/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-middle&amp;utm_content=link4">Spring REST Validation Example</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+3.1k</div><a href="https://mkyong.com/spring-boot/spring-boot-junit-5-mockito/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-middle&amp;utm_content=link5">Spring Boot + JUnit 5 + Mockito</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+3.1k</div><a href="https://mkyong.com/java/jackson-convert-json-array-string-to-list/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-middle&amp;utm_content=link6">Jackson - Convert JSON array string to L...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+3k</div><a href="https://mkyong.com/spring-boot/spring-rest-spring-security-example/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-middle&amp;utm_content=link7">Spring REST + Spring Security Example</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+3k</div><a href="https://mkyong.com/python/python-3-convert-string-to-bytes/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-middle&amp;utm_content=link8">Python 3 : Convert string to bytes</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+3k</div><a href="https://mkyong.com/spring-boot/spring-rest-error-handling-example/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-middle&amp;utm_content=link9">Spring REST Error Handling Example</a></div></div>  <div class="col d-1200"><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+11.7k</div><a href="https://mkyong.com/java/java-convert-string-to-int/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-right&amp;utm_content=link0">Java - Convert String to int</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+10.3k</div><a href="https://mkyong.com/java/java-what-is-xms-and-xmx-parameter/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-right&amp;utm_content=link1">Java - what is -Xms and -Xmx parameter?</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+8.5k</div><a href="https://mkyong.com/maven/how-to-install-maven-in-windows/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-right&amp;utm_content=link2">How to install Maven on Windows</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+8.2k</div><a href="https://mkyong.com/java8/java-8-foreach-examples/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-right&amp;utm_content=link3">Java 8 forEach examples</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+8.2k</div><a href="https://mkyong.com/java8/java-8-streams-filter-examples/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-right&amp;utm_content=link4">Java 8 Streams filter examples</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+6.7k</div><a href="https://mkyong.com/java8/java-8-streams-map-examples/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-right&amp;utm_content=link5">Java 8 Streams map() examples</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+6.4k</div><a href="https://mkyong.com/javascript/check-if-variable-is-a-number-in-javascript/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-right&amp;utm_content=link6">Check if variable is a number in JavaScr...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+6k</div><a href="https://mkyong.com/java/how-to-set-java_home-on-windows-10/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-right&amp;utm_content=link7">How to set JAVA_HOME on Windows 10?</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+6k</div><a href="https://mkyong.com/java/java-generate-random-integers-in-a-range/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-right&amp;utm_content=link8">Java - Generate random integers in a ran...</a></div><div class="pv-flex-wrapper"><div class="pv-box-100 kformat">+5.7k</div><a href="https://mkyong.com/java/java-how-to-get-current-date-time-date-and-calender/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=footer-right&amp;utm_content=link9">Java - How to get current date time</a></div></div> </div></div></div>
+
+	<div id="footer-link" class="d-1200">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-4">
+					<h4>Favorites Links</h4>
+					{To be update...}
+				</div>
+
+				<div class="col-4">
+					<h4>Partners &amp; Bookmarks</h4>
+					<div class="menu-partners-container"><ul id="menu-partners" class="menu"><li id="menu-item-13686" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13686"><a title="JAX London" href="https://jaxlondon.com/?utm_source=mkyong.com&amp;utm_medium=referral&amp;utm_campaign=mediapartner">JAX London</a></li>
+<li id="menu-item-13664" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13664"><a href="https://www.javacodegeeks.com/">Java Code Geeks</a></li>
+<li id="menu-item-15169" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15169"><a href="https://www.journaldev.com/">JournalDev</a></li>
+</ul></div>				</div>
+
+				<div class="col-4">
+
+					<h4>About Mkyong.com</h4>
+					<p>Mkyong.com is for Java and J2EE developers, all examples are simple and easy to understand, and well tested in our development environment.
+					</p>
+					<p>
+						All source code in Mkyong.com is licensed under the <a href="https://mkyong.com/code-license/">MIT License</a>.
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<!-- /#footer-link -->
+
+	<div id="footer-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+						Copyright © 2008-2020 Mkyong.com, all rights reserved | Powered by Nginx + Wordpress | <a href="https://mkyong.com/privacy-policy/">Privacy Policy</a>
+				</div>
+			</div>
+			<a id="wpdUserContentInfoAnchor" style="display:none;" rel="#wpdUserContentInfo" data-wpd-lity="">wpDiscuz</a><div id="wpdUserContentInfo" style="overflow:auto;background:#FDFDF6;padding:20px;width:600px;max-width:100%;border-radius:6px;" class="lity-hide"></div><noscript><style>.lazyload{display:none;}</style></noscript><script data-noptimize="1" type="text/javascript">window.lazySizesConfig=window.lazySizesConfig||{};window.lazySizesConfig.loadMode=1;</script><script async="" data-noptimize="1" src="./jsoup – Basic web crawler example – Mkyong.com_files/lazysizes.min.js.download" type="text/javascript"></script><script type="text/javascript" src="./jsoup – Basic web crawler example – Mkyong.com_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./jsoup – Basic web crawler example – Mkyong.com_files/jquery.form.min.js.download"></script>
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpdiscuzAjaxObj = {"url":"https:\/\/mkyong.com\/wp-admin\/admin-ajax.php","customAjaxUrl":"https:\/\/mkyong.com\/wp-content\/plugins\/wpdiscuz\/utils\/ajax\/wpdiscuz-ajax.php","wpdiscuz_options":{"wc_hide_replies_text":"Hide Replies","wc_show_replies_text":"View Replies","wc_msg_required_fields":"Please fill out required fields","wc_invalid_field":"Some of field value is invalid","wc_error_empty_text":"please fill out this field to comment","wc_error_url_text":"url is invalid","wc_error_email_text":"email address is invalid","wc_invalid_captcha":"Invalid Captcha Code","wc_login_to_vote":"You Must Be Logged In To Vote","wc_deny_voting_from_same_ip":"You are not allowed to vote for this comment","wc_self_vote":"You cannot vote for your comment","wc_vote_only_one_time":"You've already voted for this comment","wc_voting_error":"Voting Error","wc_held_for_moderate":"Comment awaiting moderation","wc_comment_edit_not_possible":"Sorry, this comment no longer possible to edit","wc_comment_not_updated":"Sorry, the comment was not updated","wc_comment_not_edited":"You've not made any changes","wc_new_comment_button_text":"new comment","wc_new_comments_button_text":"new comments","wc_new_reply_button_text":"new reply on your comment","wc_new_replies_button_text":"new replies on your comments","wc_msg_input_min_length":"Input is too short","wc_msg_input_max_length":"Input is too long","wc_follow_user":"Follow this user","wc_unfollow_user":"Unfollow this user","wc_follow_success":"You started following this comment author","wc_follow_canceled":"You stopped following this comment author.","wc_follow_email_confirm":"Please check your email and confirm the user following request.","wc_follow_email_confirm_fail":"Sorry, we couldn't send confirmation email.","wc_follow_login_to_follow":"Please login to follow users.","wc_follow_impossible":"We are sorry, but you can't follow this user.","wc_follow_not_added":"Following failed. Please try again later.","is_user_logged_in":false,"commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"30","liveUpdateGuests":"1","wc_comment_bg_color":"#FEFEFE","wc_reply_bg_color":"#F8F8F8","wpdiscuzCommentsOrder":"asc","wpdiscuzCommentOrderBy":"by_vote","commentsVoteOrder":true,"wordpressThreadCommentsDepth":"5","wordpressIsPaginate":"","commentTextMaxLength":null,"storeCommenterData":100000,"isCaptchaInSession":true,"isGoodbyeCaptchaActive":false,"socialLoginAgreementCheckbox":0,"enableFbLogin":0,"enableFbShare":0,"facebookAppID":"","facebookUseOAuth2":0,"enableGoogleLogin":0,"googleAppID":"","cookiehash":"82bd7f1688adb79fb9b7975591077045","isLoadOnlyParentComments":0,"ahk":"^l0s)&p=xqa20zt76lg6k71n6vfnfk@%","enableDropAnimation":1,"isNativeAjaxEnabled":1,"cookieCommentsSorting":"wpdiscuz_comments_sorting","enableLastVisitCookie":0,"version":"5.3.5","wc_post_id":14330,"loadLastCommentId":0,"lastVisitKey":"wpdiscuz_last_visit","isCookiesEnabled":true,"wc_captcha_show_for_guest":"0","wc_captcha_show_for_members":"0","is_email_field_required":1}};
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpdiscuzUCObj = {"msgConfirmDeleteComment":"Are you sure you want to delete this comment?","msgConfirmCancelSubscription":"Are you sure you want to cancel this subscription?","msgConfirmCancelFollow":"Are you sure you want to cancel this follow?"};
+/* ]]> */
+</script>
+
+
+
+
+
+		</div>
+	</div>
+
+	
+		<!-- Google Analytics -->
+		<script type="text/javascript">
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-752408-5', 'auto');
+		  ga('send', 'pageview');
+		</script>
+	
+	 
+</footer>
+	</div>
+</div>
+<!--/.container-fluid -->
+
+<script defer="" src="./jsoup – Basic web crawler example – Mkyong.com_files/autoptimize_5ea129c3db6d6c20adb43c1ab3525d55.js.download" type="text/javascript"></script>
+
+
+<!-- Dynamic page generated in 0.052 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2020-03-30 10:18:35 -->
+<img width="0" height="0" src="./jsoup – Basic web crawler example – Mkyong.com_files/impimg.php" style="display: none !important;display: none;" stndz-blocked=""><div id="vi_pixel_8383" style="width: 0px; height: 0px; display: none;"></div></body></html>

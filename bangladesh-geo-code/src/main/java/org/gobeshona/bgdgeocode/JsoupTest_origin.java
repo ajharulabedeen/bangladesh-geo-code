@@ -18,9 +18,10 @@ public class JsoupTest_origin
             final String query = "android";
 //            String url="https://play.google.com/store/apps/details?id=com.bcsprostuti.tanim.bcsprostuti";
 //            String url="https://play.google.com/store/search?q=bcs";
-            String url="https://www.bangladesh.gov.bd/site/view/division-list/List-of-Divisions\"";
-            final Document page = Jsoup.connect(url).userAgent(USER_AGENT).get();
-            
+            String url="https://www.bangladesh.gov.bd/site/view/division-list/List-of-Divisions";
+//            final Document page = Jsoup.connect(url).userAgent(USER_AGENT).ignoreHttpErrors(true).get();
+            final Document page = Jsoup.connect(url).userAgent(USER_AGENT).validateTLSCertificates(false).get();
+
             System.out.println(page.outerHtml());
             
             File file = new File(query+".html");

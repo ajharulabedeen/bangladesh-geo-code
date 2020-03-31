@@ -15,6 +15,9 @@
     <SUITE FILE_PATH="coverage/bangladesh_geo_code$BangladeshGeoCode__1_.ic" NAME="BangladeshGeoCode (1) Coverage Results" MODIFIED="1585537006264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.gobeshona.bgdgeocode.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/bangladesh_geo_code$Selenium.ic" NAME="Selenium Coverage Results" MODIFIED="1585630820833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.geocode.*</FILTER>
+    </SUITE>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -30,10 +33,11 @@
       <file leaf-file-name="Selenium.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/test/geocode/Selenium.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="78" column="73" selection-start-line="78" selection-start-column="73" selection-end-line="78" selection-end-column="73" />
+            <state relative-caret-position="203">
+              <caret line="141" column="22" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#verifySearchButton#0;class#Selenium#0" />
                 <element signature="method#testChoromo#0;class#Selenium#0" />
               </folding>
             </state>
@@ -108,10 +112,10 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2545" />
-    <option name="y" value="-16" />
-    <option name="width" value="1935" />
-    <option name="height" value="1055" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1098" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -418,48 +422,47 @@
       <workItem from="1585535934288" duration="9264000" />
       <workItem from="1585551646478" duration="1325000" />
       <workItem from="1585553028016" duration="7244000" />
-      <workItem from="1585622875297" duration="3456000" />
+      <workItem from="1585622875297" duration="8045000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Selenium - 2020.03.31 at 09h 16m 04s.xml">
+    <history-entry file="Selenium - 2020.03.31 at 09h 51m 51s.xml">
       <configuration name="Selenium" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Selenium - 2020.03.31 at 09h 17m 24s.xml">
+    <history-entry file="Selenium - 2020.03.31 at 09h 57m 44s.xml">
       <configuration name="Selenium" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Selenium - 2020.03.31 at 09h 19m 02s.xml">
+    <history-entry file="Selenium - 2020.03.31 at 10h 02m 07s.xml">
       <configuration name="Selenium" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Selenium - 2020.03.31 at 09h 27m 14s.xml">
+    <history-entry file="Selenium - 2020.03.31 at 10h 06m 19s.xml">
       <configuration name="Selenium" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Selenium - 2020.03.31 at 09h 30m 52s.xml">
+    <history-entry file="Selenium - 2020.03.31 at 11h 00m 35s.xml">
       <configuration name="Selenium" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Selenium - 2020.03.31 at 09h 32m 40s.xml">
+    <history-entry file="Selenium - 2020.03.31 at 11h 00m 37s.xml">
       <configuration name="Selenium" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Selenium - 2020.03.31 at 09h 34m 32s.xml">
+    <history-entry file="Selenium - 2020.03.31 at 11h 04m 57s.xml">
       <configuration name="Selenium" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Selenium - 2020.03.31 at 09h 39m 37s.xml">
+    <history-entry file="Selenium - 2020.03.31 at 11h 07m 13s.xml">
       <configuration name="Selenium" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Selenium - 2020.03.31 at 09h 42m 40s.xml">
+    <history-entry file="Selenium - 2020.03.31 at 11h 09m 14s.xml">
       <configuration name="Selenium" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Selenium - 2020.03.31 at 09h 46m 37s.xml">
+    <history-entry file="Selenium - 2020.03.31 at 11h 21m 17s.xml">
       <configuration name="Selenium" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21289000" />
+    <option name="totallyTimeSpent" value="25878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -473,7 +476,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44456178" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.39398086" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3938754" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1484375" />
@@ -533,6 +536,7 @@
           <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#verifySearchButton#0;class#Selenium#0" />
             <element signature="method#testChoromo#0;class#Selenium#0" />
           </folding>
         </state>
@@ -575,6 +579,7 @@
           <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#verifySearchButton#0;class#Selenium#0" />
             <element signature="method#testChoromo#0;class#Selenium#0" />
           </folding>
         </state>
@@ -655,10 +660,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/test/geocode/Selenium.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="78" column="73" selection-start-line="78" selection-start-column="73" selection-end-line="78" selection-end-column="73" />
+        <state relative-caret-position="203">
+          <caret line="141" column="22" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#verifySearchButton#0;class#Selenium#0" />
             <element signature="method#testChoromo#0;class#Selenium#0" />
           </folding>
         </state>

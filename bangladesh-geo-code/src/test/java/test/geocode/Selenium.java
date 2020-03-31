@@ -58,7 +58,7 @@ public class Selenium {
         System.out.println("Selenium Working!");
     }
 
-    @Test
+    //    @Test
     public void verifySearchButton() throws Exception {
         Path path = FileSystems.getDefault().getPath("src/main/resources/geckodriver/geckodriver.exe");
         System.out.println(path.toString());
@@ -81,12 +81,74 @@ public class Selenium {
         selectDiv.selectByIndex(4);
         Thread.sleep(2000);
         Select selectDist = new Select(driver.findElement(By.id("dist-list")));
-        selectDist.selectByIndex(8);
-        Thread.sleep(2000);
-        Select selectUpz = new Select(driver.findElement(By.id("upz-list")));
-        selectUpz.selectByIndex(6);
+
+        for (int x = 1; x <= 8; x++) {
+            selectDist.selectByIndex(x);
+            Thread.sleep(2000);
+            for (int y = 1; y < 3; y++) {
+                Select selectUpz = new Select(driver.findElement(By.id("upz-list")));
+                selectUpz.selectByIndex(y);
+                Thread.sleep(3000);
+            }
+        }
+
 //        Consol;
     }
+
+//        @Test
+    public void divDistUpz() throws Exception {
+        Path path = FileSystems.getDefault().getPath("src/main/resources/geckodriver/geckodriver.exe");
+        System.out.println(path.toString());
+        System.setProperty("webdriver.gecko.driver", path.toString());
+        WebDriver driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+//        driver.get("http://www.google.com");
+        driver.get("https://www.bangladesh.gov.bd/site/view/union-list/");
+
+        String search_text = "Google Search";
+        WebElement search_button = driver.findElement(By.className("submit-lang"));
+        search_button.click();
+        WebElement div_list = driver.findElement(By.id("div-list"));
+        div_list.click();
+        WebElement div_list_ = driver.findElement(By.tagName("option"));
+
+//        Select select = new Select(driver.findElement(By.xpath("//select")));
+        Select selectDiv = new Select(driver.findElement(By.id("div-list")));
+        selectDiv.selectByIndex(4);
+        Thread.sleep(2000);
+        Select selectDist = new Select(driver.findElement(By.id("dist-list")));
+
+        for (int x = 1; x <= 8; x++) {
+            selectDist.selectByIndex(x);
+            Thread.sleep(2000);
+            for (int y = 1; y < 3; y++) {
+                Select selectUpz = new Select(driver.findElement(By.id("upz-list")));
+                selectUpz.selectByIndex(y);
+                Thread.sleep(3000);
+            }
+        }
+
+//        Consol;
+    }
+
+        @Test
+    public void byDist() throws Exception {
+        Path path = FileSystems.getDefault().getPath("src/main/resources/geckodriver/geckodriver.exe");
+        System.out.println(path.toString());
+        System.setProperty("webdriver.gecko.driver", path.toString());
+        WebDriver driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        for (int i = 1; i <= 64; i++) {
+            driver.get("http://oldweb.lged.gov.bd/DistrictArea2.aspx?Area=Upazilla&DistrictID=" + i);
+            WebElement distName = driver.findElement(By.id("ctl00_lblProjectTitleheader"));
+            System.out.println(distName.getText());
+            Thread.sleep(3000);
+        }
+    }
+
+
+//
 
     //    @Test
     public void testChoromo() {

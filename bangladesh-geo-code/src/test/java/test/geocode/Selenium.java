@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.Console;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.concurrent.TimeUnit;
@@ -18,6 +19,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 
 /**
@@ -56,11 +58,10 @@ public class Selenium {
         System.out.println("Selenium Working!");
     }
 
-    //    @Test
-    public void verifySearchButton() {
+    @Test
+    public void verifySearchButton() throws Exception {
         Path path = FileSystems.getDefault().getPath("src/main/resources/geckodriver/geckodriver.exe");
         System.out.println(path.toString());
-//        String
         System.setProperty("webdriver.gecko.driver", path.toString());
         WebDriver driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -69,30 +70,37 @@ public class Selenium {
         driver.get("https://www.bangladesh.gov.bd/site/view/union-list/");
 
         String search_text = "Google Search";
-//        WebElement search_button = driver.findElement(By.name("btnK"));
         WebElement search_button = driver.findElement(By.className("submit-lang"));
         search_button.click();
-//        WebElement div_list = driver.findElement(By.className("div-list"));
         WebElement div_list = driver.findElement(By.id("div-list"));
         div_list.click();
         WebElement div_list_ = driver.findElement(By.tagName("option"));
 
-        String text = search_button.getAttribute("value");
-        Assert.assertEquals(text, search_text, "বাংলা");
+//        Select select = new Select(driver.findElement(By.xpath("//select")));
+        Select selectDiv = new Select(driver.findElement(By.id("div-list")));
+        selectDiv.selectByIndex(4);
+        Thread.sleep(2000);
+        Select selectDist = new Select(driver.findElement(By.id("dist-list")));
+        selectDist.selectByIndex(8);
+        Thread.sleep(2000);
+        Select selectUpz = new Select(driver.findElement(By.id("upz-list")));
+        selectUpz.selectByIndex(6);
+//        Consol;
     }
 
-    @Test
+    //    @Test
     public void testChoromo() {
 // declaration and instantiation of objects/variables
-//        Path path = FileSystems.getDefault().getPath("src/main/resources/geckodriver/geckodriver.exe");
-//        System.out.println(path.toString());
-//        System.setProperty("webdriver.gecko.driver", path.toString());
-//        WebDriver driver = new FirefoxDriver();
-        //comment the above 2 lines and uncomment below 2 lines to use Chrome
-        Path path = FileSystems.getDefault().getPath("src/main/resources/chromedriver/chromedriver.exe");
+        Path path = FileSystems.getDefault().getPath("src/main/resources/geckodriver/geckodriver.exe");
         System.out.println(path.toString());
-        System.setProperty("webdriver.chrome.driver", path.toString());
-        WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver", path.toString());
+        WebDriver driver = new FirefoxDriver();
+
+        //Choro not wroking : browswer open but site not load.
+//        Path path = FileSystems.getDefault().getPath("src/main/resources/chromedriver/chromedriver.exe");
+//        System.out.println(path.toString());
+//        System.setProperty("webdriver.chrome.driver", path.toString());
+//        WebDriver driver = new ChromeDriver();
 
         String baseUrl = "http://demo.guru99.com/test/newtours/";
         String expectedTitle = "Welcome: Mercury Tours";
